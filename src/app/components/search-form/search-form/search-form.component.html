@@ -1,0 +1,5 @@
+<label class="form-label">Numer indeksu</label>
+<input class="form-control" type="text" id="indexNumberInput" placeholder="Numer indeksu" [formControl]="indexNumberInput">
+<button class="btn btn-primary mt-2" (click)="getPlanForIndex()">Szukaj</button>
+
+<app-plan-accordion [planItems]="plan"></app-plan-accordion>

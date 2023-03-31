@@ -1,5 +1,12 @@
-<label class="form-label">Numer indeksu</label>
-<input class="form-control" type="text" id="indexNumberInput" placeholder="Numer indeksu" [formControl]="indexNumberInput">
-<button class="btn btn-primary mt-2" (click)="getPlanForIndex()">Szukaj</button>
+<div class="d-flex justify-content-center">
+  <div class="me-5 d-flex flex-column justify-content-center">
+    <label class="form-label">Numer indeksu</label>
+    <input class="form-control" type="text" id="indexNumberInput" placeholder="Numer indeksu" [formControl]="indexNumberInput">
+    <button class="btn btn-primary mt-2" (click)="getPlanForIndex()">Szukaj</button>
+  </div>
+  <div>
+    <app-plan-calendar [planItems]="plan"></app-plan-calendar>
+  </div>
+</div>
 
 <app-plan-accordion [planItems]="plan"></app-plan-accordion>

@@ -1,0 +1,29 @@
+<app-plan-calendar-header [(view)]="view" [(viewDate)]="viewDate">
+</app-plan-calendar-header>
+
+<div [ngSwitch]="view" class="scroll-container border-1" #scrollContainer>
+  <mwl-calendar-month-view
+    *ngSwitchCase="'month'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [activeDayIsOpen]="true"
+    [weekStartsOn]="weekStartsOn"
+  >
+  </mwl-calendar-month-view>
+  <mwl-calendar-week-view
+    *ngSwitchCase="'week'"
+    [viewDate]="viewDate"
+    [events]="events"
+    [dayStartHour]="7"
+    [dayEndHour]="20"
+    [weekStartsOn]="weekStartsOn"
+    [locale]="locale"
+  >
+  </mwl-calendar-week-view>
+  <mwl-calendar-day-view
+    *ngSwitchCase="'day'"
+    [viewDate]="viewDate"
+    [events]="events"
+  >
+  </mwl-calendar-day-view>
+</div>

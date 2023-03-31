@@ -1,7 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 
 body {
   padding: 2rem;
+}
+
+.cal-week-view .cal-time-events .cal-event {
+  line-height: 1.125rem !important;
+}
+
+.single-calendar-event span {
+  color: white !important;
+  white-space: normal;
 }

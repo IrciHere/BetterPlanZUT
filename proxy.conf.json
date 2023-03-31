@@ -1,0 +1,10 @@
+{
+  "/api/*": {
+    "target": "https://plan.zut.edu.pl",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true
+  }
+}

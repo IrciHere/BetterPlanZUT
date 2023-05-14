@@ -1,0 +1,36 @@
+.progress-bar-container {
+  width: 100%;
+  height: 20px;
+  background-color: #ddd;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+//.progress-bar {
+//  height: 100%;
+//  color: #fff;
+//  display: flex;
+//  align-items: center;
+//  justify-content: center;
+//  font-weight: bold;
+//}
+
+.progress-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.bar-description {
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

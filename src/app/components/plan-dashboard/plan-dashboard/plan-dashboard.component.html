@@ -1,0 +1,8 @@
+<h1>Dashboard</h1>
+
+<div id="plan-accordion">
+  <app-plan-dashboard-single-subject
+    *ngFor="let subjectItems of planItemsSorted | keyvalue"
+    [subjectItems]="subjectItems.value">
+  </app-plan-dashboard-single-subject>
+</div>

@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { SearchFormComponent } from './components/search-form/search-form/search-form.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { PlanAccordionComponent } from './components/plan-accordion/plan-accordion/plan-accordion.component';
+import { PlanDashboardComponent } from './components/plan-dashboard/plan-dashboard/plan-dashboard.component';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { PlanCalendarComponent } from './components/plan-calendar/plan-calendar/plan-calendar.component';
 import { PlanCalendarHeaderComponent } from './components/plan-calendar-header/plan-calendar-header/plan-calendar-header.component';
 import {registerLocaleData} from "@angular/common";
+import { PlanDashboardSingleSubjectComponent } from './components/plan-dashboard/plan-dashboard-single-subject/plan-dashboard-single-subject.component';
+import { PlanDashboardProgressBarComponent } from './components/plan-dashboard/plan-dashboard-progress-bar/plan-dashboard-progress-bar.component';
 
 registerLocaleData(localePl);
 
@@ -19,9 +21,11 @@ registerLocaleData(localePl);
   declarations: [
     AppComponent,
     SearchFormComponent,
-    PlanAccordionComponent,
+    PlanDashboardComponent,
     PlanCalendarComponent,
-    PlanCalendarHeaderComponent
+    PlanCalendarHeaderComponent,
+    PlanDashboardSingleSubjectComponent,
+    PlanDashboardProgressBarComponent
   ],
     imports: [
         BrowserModule,

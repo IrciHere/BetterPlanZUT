@@ -1,9 +1,15 @@
 <div class="d-flex justify-content-center">
-  <div class="me-5 d-flex flex-column justify-content-center">
-    <label class="form-label">Numer indeksu</label>
-    <input class="form-control" type="text" id="indexNumberInput" placeholder="Numer indeksu" [formControl]="indexNumberInput">
+  <form class="me-5 d-flex flex-column justify-content-center" [formGroup]="searchForm">
+    <label class="form-label">Data początkowa</label>
+    <input class="form-control" type="date" id="startDateInput" formControlName="startDateInput">
+
+    <label class="form-label mt-2">Data końcowa</label>
+    <input class="form-control" type="date" id="endDateInput" formControlName="endDateInput" [value]="semesterEndDate">
+
+    <label class="form-label mt-2">Numer indeksu</label>
+    <input class="form-control" type="text" id="indexNumberInput" placeholder="Numer indeksu" formControlName="indexNumberInput">
     <button class="btn btn-primary mt-2" (click)="getPlanForIndex()">Szukaj</button>
-  </div>
+  </form>
   <div>
     <app-plan-calendar [planItems]="plan"></app-plan-calendar>
   </div>

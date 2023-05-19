@@ -1,0 +1,14 @@
+<div>
+  <h4 class="text-center text-capitalize">{{dashboardSingleSubject.classForm}}</h4>
+  <app-plan-dashboard-progress-bar
+    [currentValue]="dashboardSingleSubject.pastClasses"
+    [maxValue]="dashboardSingleSubject.allClasses"
+    [barColor]="dashboardSingleSubject.classesList[0].color">
+  </app-plan-dashboard-progress-bar>
+  <ul>
+    <li *ngFor="let subjectItem of dashboardSingleSubject.classesList"
+        [ngClass]="subjectItem.end.getTime() < currentDateTime.getTime() ? 'past-class' : ''">
+      {{ subjectItem.start | date: dateShowFormat }}, {{subjectItem.start | date:timeShowFormat}} - {{ subjectItem.end | date: timeShowFormat }}
+    </li>
+  </ul>
+</div>

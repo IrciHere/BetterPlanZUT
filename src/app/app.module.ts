@@ -10,10 +10,11 @@ import { PlanDashboardComponent } from './components/plan-dashboard/plan-dashboa
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { PlanCalendarComponent } from './components/plan-calendar/plan-calendar/plan-calendar.component';
-import { PlanCalendarHeaderComponent } from './components/plan-calendar-header/plan-calendar-header/plan-calendar-header.component';
+import { PlanCalendarHeaderComponent } from './components/plan-calendar/plan-calendar-header/plan-calendar-header.component';
 import {registerLocaleData} from "@angular/common";
 import { PlanDashboardSingleSubjectComponent } from './components/plan-dashboard/plan-dashboard-single-subject/plan-dashboard-single-subject.component';
 import { PlanDashboardProgressBarComponent } from './components/plan-dashboard/plan-dashboard-progress-bar/plan-dashboard-progress-bar.component';
+import { PlanDashboardSingleClassformComponent } from './components/plan-dashboard/plan-dashboard-single-classform/plan-dashboard-single-classform.component';
 
 registerLocaleData(localePl);
 
@@ -25,7 +26,8 @@ registerLocaleData(localePl);
     PlanCalendarComponent,
     PlanCalendarHeaderComponent,
     PlanDashboardSingleSubjectComponent,
-    PlanDashboardProgressBarComponent
+    PlanDashboardProgressBarComponent,
+    PlanDashboardSingleClassformComponent
   ],
     imports: [
         BrowserModule,

@@ -1,6 +1,6 @@
-<h1>Dashboard</h1>
+<h1 class="my-4 text-center">Dashboard</h1>
 
-<div id="plan-accordion">
+<div id="plan-accordion" class="d-flex flex-wrap justify-content-evenly">
   <app-plan-dashboard-single-subject
     *ngFor="let subjectItems of planItemsSorted | keyvalue"
     [subjectItems]="subjectItems.value">

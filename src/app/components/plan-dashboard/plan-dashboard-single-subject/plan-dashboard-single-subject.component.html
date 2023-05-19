@@ -1,16 +1,11 @@
-<h3>{{ subjectItems ? subjectItems[0].subject : "" }}</h3>
+<div class="border border-2 rounded mb-4 p-2 single-subject">
+  <h3 class="text-center">{{ subjectItems ? subjectItems[0].subject : "" }}</h3>
 
-<div *ngFor="let dashboardSingleSubject of dashboardSubjects">
-  <h4>{{dashboardSingleSubject.classForm}}</h4>
-  <app-plan-dashboard-progress-bar
-    [currentValue]="dashboardSingleSubject.pastClasses"
-    [maxValue]="dashboardSingleSubject.allClasses"
-    [barColor]="dashboardSingleSubject.classesList[0].color">
-  </app-plan-dashboard-progress-bar>
-  <ul>
-    <li *ngFor="let subjectItem of dashboardSingleSubject.classesList"
-    [ngClass]="subjectItem.end.getTime() < currentDateTime.getTime() ? 'past-class' : ''">
-      {{ subjectItem.start | date: dateShowFormat }} - {{ subjectItem.end | date: dateShowFormat }} | {{ subjectItem.title }}
-    </li>
-  </ul>
+  <div class="d-flex justify-content-evenly mt-3">
+    <app-plan-dashboard-single-classform
+      *ngFor="let dashboardSingleSubject of dashboardSubjects"
+      [dashboardSingleSubject]="dashboardSingleSubject"
+      [currentDateTime]="currentDateTime">
+    </app-plan-dashboard-single-classform>
+  </div>
 </div>

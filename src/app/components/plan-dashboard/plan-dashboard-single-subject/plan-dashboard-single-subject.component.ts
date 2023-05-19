@@ -8,7 +8,8 @@ import {DashboardSingleSubject} from "../../../models/DashboardSingleSubject";
   styleUrls: ['./plan-dashboard-single-subject.component.scss']
 })
 export class PlanDashboardSingleSubjectComponent {
-  dateShowFormat: string = "dd MMM yyyy, HH:mm";
+  dateShowFormat: string = "dd MMM yyyy";
+  timeShowFormat: string = "HH:mm";
 
   @Input()
   subjectItems: PlanItem[] = [];

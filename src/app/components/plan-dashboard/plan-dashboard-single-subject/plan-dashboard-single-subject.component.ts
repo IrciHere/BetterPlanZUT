@@ -8,9 +8,6 @@ import {DashboardSingleSubject} from "../../../models/DashboardSingleSubject";
   styleUrls: ['./plan-dashboard-single-subject.component.scss']
 })
 export class PlanDashboardSingleSubjectComponent {
-  dateShowFormat: string = "dd MMM yyyy";
-  timeShowFormat: string = "HH:mm";
-
   @Input()
   subjectItems: PlanItem[] = [];
 
@@ -21,6 +18,10 @@ export class PlanDashboardSingleSubjectComponent {
     let subjectItemsGrouped: { [id: string] : PlanItem[]; } = {};
 
     items.forEach((planItem) => {
+      if (planItem.lesson_status_short === "o") {
+        return;
+      }
+
       planItem.end = new Date(planItem.end);
 
       if (!subjectItemsGrouped[planItem.lesson_form_short]) {

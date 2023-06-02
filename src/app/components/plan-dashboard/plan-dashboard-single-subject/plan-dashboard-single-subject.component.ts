@@ -24,23 +24,24 @@ export class PlanDashboardSingleSubjectComponent {
 
       planItem.end = new Date(planItem.end);
 
-      if (!subjectItemsGrouped[planItem.lesson_form_short]) {
-        subjectItemsGrouped[planItem.lesson_form_short] = [planItem];
+      const arrayKey = planItem.lesson_status.toLowerCase().includes("egzamin") ? "Egzamin" : planItem.lesson_form;
+
+      if (!subjectItemsGrouped[arrayKey]) {
+        subjectItemsGrouped[arrayKey] = [planItem];
       }
       else {
-        subjectItemsGrouped[planItem.lesson_form_short].push(planItem);
+        subjectItemsGrouped[arrayKey].push(planItem);
       }
     });
 
     const keys = Object.keys(subjectItemsGrouped);
 
     this.dashboardSubjects = keys.map(key =>
-      this.mapSubjectItemsToDashboardSingleSubject(subjectItemsGrouped[key])
+      this.mapSubjectItemsToDashboardSingleSubject(subjectItemsGrouped[key], key)
     );
   }
 
-  mapSubjectItemsToDashboardSingleSubject(items: PlanItem[]): DashboardSingleSubject {
-    const classForm = items[0].lesson_form;
+  mapSubjectItemsToDashboardSingleSubject(items: PlanItem[], classForm: string): DashboardSingleSubject {
     const classesList = items;
     const allClasses = items.length;
     const pastClasses = items.reduce((count, item) => {

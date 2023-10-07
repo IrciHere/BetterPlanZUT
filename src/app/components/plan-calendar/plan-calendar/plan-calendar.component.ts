@@ -21,6 +21,7 @@ import {
 } from 'date-fns';
 import {CustomDateFormatter} from "./providers/custom-date-formatter.provider";
 import {PlanItem} from "../../../models/PlanItem";
+import {da, pl} from "date-fns/locale";
 
 const colors: any = {
   red: {
@@ -74,15 +75,25 @@ export class PlanCalendarComponent {
     },
   ];
 
-  mapPlanItemToCalendarEvent = function(planItem: PlanItem): CalendarEvent{
+  getTimeFromDate(date: Date): string {
+    const hours = date.getHours();
+    const minutes = (date.getMinutes() < 10 ? '0' : '') + date.getMinutes();
+
+    return `${hours}:${minutes}`;
+  }
+
+  mapPlanItemToCalendarEvent(planItem: PlanItem): CalendarEvent{
+    const startDate = new Date(planItem.start);
+    const endDate = new Date(planItem.end);
+
     return {
-      title: planItem.title,
+      title: `${this.getTimeFromDate(startDate)} - ${this.getTimeFromDate(endDate)}<br/>${planItem.title}`,
       color: {
         primary: planItem.color,
         secondary: planItem.color
       },
-      start: new Date(planItem.start),
-      end: new Date(planItem.end),
+      start: startDate,
+      end: endDate,
       cssClass: 'single-calendar-event'
     }
   };

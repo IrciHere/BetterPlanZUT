@@ -1,5 +1,7 @@
 # BetterPlanZut
 
+The project was created to provide a clearer view for ZUT's class schedule, along with a dashboard for current semester progress.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
 ## Development server

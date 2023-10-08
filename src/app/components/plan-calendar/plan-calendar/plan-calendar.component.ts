@@ -1,27 +1,20 @@
 import {
-  ChangeDetectionStrategy,
   Component, Input,
-  ViewEncapsulation,
 } from '@angular/core';
 import {BehaviorSubject, combineLatest, map, Subject} from 'rxjs';
 import {
   CalendarDateFormatter,
   CalendarEvent,
-  CalendarEventTimesChangedEvent,
   CalendarView, DAYS_OF_WEEK,
 } from 'angular-calendar';
 import {
-  addDays,
   addHours,
-  isSameDay,
   setDay,
   startOfDay,
-  subDays,
   subSeconds,
 } from 'date-fns';
 import {CustomDateFormatter} from "./providers/custom-date-formatter.provider";
 import {PlanItem} from "../../../models/PlanItem";
-import {da, pl} from "date-fns/locale";
 
 const colors: any = {
   red: {
@@ -86,16 +79,20 @@ export class PlanCalendarComponent {
     const startDate = new Date(planItem.start);
     const endDate = new Date(planItem.end);
 
+    const planItemTitle = `${this.getTimeFromDate(startDate)} - ${this.getTimeFromDate(endDate)}<br/>${planItem.title}`;
+    const planItemDetails = `<strong>${planItem.title}</strong><br/>${planItem.worker_title}<br/>sala ${planItem.room}<br/>grupa ${planItem.group_name}<br/>${planItem.lesson_status}`;
+
     return {
-      title: `${this.getTimeFromDate(startDate)} - ${this.getTimeFromDate(endDate)}<br/>${planItem.title}`,
+      title: planItemTitle,
       color: {
         primary: planItem.color,
         secondary: planItem.color
       },
       start: startDate,
       end: endDate,
-      cssClass: 'single-calendar-event'
-    }
+      cssClass: 'single-calendar-event',
+      id: planItemDetails
+    };
   };
 
   ngOnInit() {

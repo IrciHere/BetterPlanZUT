@@ -6,7 +6,8 @@
     "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "deploy": "gh-pages -d dist"
   },
   "private": true,
   "dependencies": {
@@ -21,6 +22,7 @@
     "angular-calendar": "^0.31.0",
     "bootstrap": "^5.2.3",
     "date-fns": "^2.29.3",
+    "gh-pages": "^6.0.0",
     "jquery": "^3.6.4",
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",

@@ -17,10 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "options": {
-              "baseHref": "/BetterPlanZUT/",
-              "deployUrl": "/BetterPlanZUT/"
-            },
+            "baseHref": "/BetterPlanZUT/",
+            "deployUrl": "/BetterPlanZUT/",
             "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",

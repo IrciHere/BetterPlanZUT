@@ -1,6 +1,14 @@
 <app-plan-calendar-header [(view)]="view" [(viewDate)]="viewDate">
 </app-plan-calendar-header>
 
+<ng-template #cellTooltipTemplate
+             let-event="event">
+  <div class="cal-tooltip cal-tooltip-top">
+    <div class="cal-tooltip-arrow"></div>
+    <div class="cal-tooltip-inner" [innerHTML]="event.id"></div>
+  </div>
+</ng-template>
+
 <div [ngSwitch]="view" class="scroll-container border-1" #scrollContainer>
   <mwl-calendar-month-view
     *ngSwitchCase="'month'"
@@ -18,12 +26,14 @@
     [dayEndHour]="20"
     [weekStartsOn]="weekStartsOn"
     [locale]="locale"
+    [tooltipTemplate]="cellTooltipTemplate"
   >
   </mwl-calendar-week-view>
   <mwl-calendar-day-view
     *ngSwitchCase="'day'"
     [viewDate]="viewDate"
     [events]="events"
+    [tooltipTemplate]="cellTooltipTemplate"
   >
   </mwl-calendar-day-view>
 </div>

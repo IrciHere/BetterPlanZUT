@@ -2,6 +2,8 @@
 
 The project was created to provide a clearer view for ZUT's class schedule, along with a dashboard for current semester progress.
 
+It can be used on https://ircihere.github.io/BetterPlanZUT/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
 ## Development server
